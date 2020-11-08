@@ -68,14 +68,25 @@ function Transition(props) {
 }
 
 function MarkdownEditor(props) {
-    const { api, configDispatcher } = props;
+    const {
+        api,
+        updateContent,
+        descriptionType,
+        overview,
+    } = props;
     const [open, setOpen] = useState(false);
     const [description, setDescription] = useState(null);
     const [apiFromContext] = useAPI();
     const [isUpdating, setIsUpdating] = useState(false);
 
     const toggleOpen = () => {
-        if (!open) setDescription(description || api.description);
+        if (!open) {
+            if (descriptionType === 'description') {
+                setDescription(api.description);
+            } else if (descriptionType === '_overview') {
+                setDescription(overview);
+            }
+        }
         setOpen(!open);
     };
     const changeDescription = (newDescription) => {
@@ -83,7 +94,7 @@ function MarkdownEditor(props) {
     };
     const updateDescription = () => {
         setIsUpdating(true);
-        configDispatcher({ action: 'description', value: description });
+        updateContent(description);
         toggleOpen();
         setIsUpdating(false);
     };
@@ -99,7 +110,7 @@ function MarkdownEditor(props) {
                     color='primary'
                     disabled={isRestricted(['apim:api_create'], apiFromContext)}
                 >
-                    {api.description ? (
+                    {api.description || overview ? (
                         <FormattedMessage
                             id='Apis.Details.Configuration.components.MarkdownEditor.edit.description.button'
                             defaultMessage='Edit Description'
@@ -176,7 +187,8 @@ function MarkdownEditor(props) {
 
 MarkdownEditor.propTypes = {
     api: PropTypes.shape({}).isRequired,
-    configDispatcher: PropTypes.func.isRequired,
+    updateContent: PropTypes.func.isRequired,
+    descriptionType: PropTypes.string.isRequired,
     classes: PropTypes.shape({}).isRequired,
     intl: PropTypes.shape({}).isRequired,
 };
