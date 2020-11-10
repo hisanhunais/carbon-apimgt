@@ -14,6 +14,8 @@ import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.APIExternalStoreListDTO;
 import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.APIListDTO;
 import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.APIMonetizationInfoDTO;
 import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.APIRevenueDTO;
+import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.APIRevisionDTO;
+import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.APIRevisionListDTO;
 import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.ApiEndpointValidationResponseDTO;
 import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.AuditReportDTO;
 import org.wso2.carbon.apimgt.rest.api.publisher.v1.dto.CertificateInfoDTO;
@@ -255,10 +257,24 @@ public interface ApisApiService {
 , MessageContext messageContext) throws APIManagementException;
       public Response apisValidateGraphqlSchemaPost(InputStream fileInputStream, Attachment fileDetail
 , MessageContext messageContext) throws APIManagementException;
+      public Response createAPIRevision(String apiId
+, APIRevisionDTO apIRevisionDTO
+, MessageContext messageContext) throws APIManagementException;
+      public Response deleteAPIRevision(String apiId
+, String apiRevisionId
+, MessageContext messageContext) throws APIManagementException;
+      public Response deployAPIRevision(String apiId
+, String apiRevisionId
+, MessageContext messageContext) throws APIManagementException;
       public Response deploymentsGetStatus(String apiId
 , MessageContext messageContext) throws APIManagementException;
       public Response generateMockScripts(String apiId
 , String ifNoneMatch
+, MessageContext messageContext) throws APIManagementException;
+      public Response getAPIRevision(String apiId
+, String apiRevisionId
+, MessageContext messageContext) throws APIManagementException;
+      public Response getAPIRevisions(String apiId
 , MessageContext messageContext) throws APIManagementException;
       public Response getAllPublishedExternalStoresByAPI(String apiId
 , String ifNoneMatch
@@ -283,6 +299,9 @@ public interface ApisApiService {
       public Response publishAPIToExternalStores(String apiId
 , String externalStoreIds
 , String ifMatch
+, MessageContext messageContext) throws APIManagementException;
+      public Response restoreAPIRevision(String apiId
+, String apiRevisionId
 , MessageContext messageContext) throws APIManagementException;
       public Response updateAPIThumbnail(String apiId
 , InputStream fileInputStream, Attachment fileDetail
