@@ -10694,7 +10694,7 @@ components:
           type: string
           example: removed a post resource
         apiInfo:
-          $ref: '#/definitions/APIRevisionAPIInfo'
+          $ref: '#/components/schemas/APIRevisionAPIInfo'
 
     #-----------------------------------------------------
     # The API Revision - API Info resource
@@ -10742,7 +10742,7 @@ components:
         list:
           type: array
           items:
-            $ref: '#/definitions/APIRevision'
+            $ref: '#/components/schemas/APIRevision'
 
     AuditReport:
       title: Resource for Audit Report
