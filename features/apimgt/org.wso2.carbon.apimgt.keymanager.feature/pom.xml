@@ -72,6 +72,69 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.upnp</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.service.device -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.device</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.service.event -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.event</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.service.wireadmin -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.wireadmin</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.provisioning</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.useradmin</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.metatype</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.permissionadmin</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.http.whiteboard</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.http.servlet-api</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.equinox.http.service.api</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.osgi.services</artifactId>
+            <version>3.12.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -126,6 +189,18 @@
                                 <bundleDef>org.wso2.wsdl4j:wsdl4j.wso2:${wsdl4j.version}</bundleDef>
                                 <bundleDef>commons-codec:commons-codec</bundleDef>
                                 <bundleDef>org.wso2.carbon.apimgt:org.wso2.carbon.apimgt.common.gateway:${carbon.apimgt.version}</bundleDef>
+                                <bundleDef>org.eclipse.platform:org.eclipse.osgi.services</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.upnp</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.device</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.event</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.wireadmin</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.provisioning</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.useradmin</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.metatype</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.permissionadmin</bundleDef>
+                                <bundleDef>org.osgi:org.osgi.service.http.whiteboard</bundleDef>
+                                <bundleDef>org.apache.felix:org.apache.felix.http.servlet-api</bundleDef>
+                                <bundleDef>org.eclipse.platform:org.eclipse.equinox.http.service.api</bundleDef>
                             </bundles>
                             <importBundles>
                                 <importBundleDef>
